@@ -6,12 +6,12 @@ const fetchVideoInfo = require("youtube-info");
 const bot = require('./package.json');
 const simpleytapi = require('simple-youtube-api')
 const youtube = new simpleytapi(yt_api_key);
-const prefix = "1";
+const prefix = "3";
 client.login(process.env.BOT);
 var guilds = {};
 
 /////////////////////////////////////////////////////////////////
-client.on('ready', () => client.user.setActivity(`1play , 1search.`, {type: "LISTENING"}))
+client.on('ready', () => client.user.setActivity(`3play , 3search.`, {type: "LISTENING"}))
 /////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
  
@@ -205,7 +205,7 @@ msg22.edit("", {embed: {
         const permissions = voiceChannel.permissionsFor(message.client.user)
         if (!permissions.has('CONNECT')) return message.channel.send({embed: {description: "🛑 I don't have permission to CONNECT! Give me some."}});
         if (!permissions.has('SPEAK')) return message.channel.send({embed: {description: "🛑 I don't have permission to SPEAK! Give me some."}});
-         if (args.length == 0 || !args) return message.channel.send(`:musical_note: 1play **<Youtube URL / Search>**`)
+         if (args.length == 0 || !args) return message.channel.send(`:musical_note: 3play **<Youtube URL / Search>**`)
             if (guilds[message.guild.id].queue.length > 0 || guilds[message.guild.id].isPlaying) {
                 if(guilds[message.guild.id].queue.length > 100) return message.channel.send(``, {embed: {
                     description: `🔒 Sorry, max queue length is 100, do **${prefix}clear** to clear entire queue or **${prefix}clear <number>** to clear 1 item`
